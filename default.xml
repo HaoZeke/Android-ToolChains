@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-5.1.1_r18" />
+
+  <remote  name="github"
+           fetch=".."
+           review="review.cyanogenmod.org" />
+
+  <remote  name="private"
+           fetch="ssh://git@github.com" />
+           
+   <remote name="bitbucket" 
+          fetch="https://bitbucket.org/" />
+
+ 	<remote name="linaro" fetch="git://android.git.linaro.org/"
+			review="review.android.git.linaro.org" />
+
+ 	<remote name="linaro-other" fetch="git://git.linaro.org/" />
+
+        <remote name="torproject"
+                fetch="https://git.torproject.org/" />
+
+        <remote name="gitlab"
+                fetch="https://gitlab.com/" />
+
+		<default revision="refs/heads/cm-12.1"
+        	     remote="github"
+           		 sync-c="true"
+          		 sync-j="4" />
+
+
+</manifest>
