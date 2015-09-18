@@ -7,30 +7,114 @@
            revision="refs/tags/android-5.1.1_r18" />
 
   <remote  name="github"
-           fetch=".."
-           review="review.cyanogenmod.org" />
+           fetch="git://github.com/" />
 
   <remote  name="private"
            fetch="ssh://git@github.com" />
            
-   <remote name="bitbucket" 
-          fetch="https://bitbucket.org/" />
+  <remote  name="bitbucket" 
+           fetch="https://bitbucket.org/" />
 
- 	<remote name="linaro" fetch="git://android.git.linaro.org/"
-			review="review.android.git.linaro.org" />
+ 	<remote  name="linaro" 
+           fetch="git://android.git.linaro.org"
+			     review="review.android.git.linaro.org" />
 
- 	<remote name="linaro-other" fetch="git://git.linaro.org/" />
+ 	<remote  name="linaro-other" fetch="git://git.linaro.org/" />
 
-        <remote name="torproject"
-                fetch="https://git.torproject.org/" />
+  <remote  name="torproject"
+           fetch="https://git.torproject.org/" />
 
-        <remote name="gitlab"
-                fetch="https://gitlab.com/" />
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
 
-		<default revision="refs/heads/cm-12.1"
-        	     remote="github"
-           		 sync-c="true"
-          		 sync-j="4" />
+	<default revision="master"
+        	 remote="github"
+           sync-c="true"
+           sync-j="4" />
 
+<!--
+Kernels need the arm-eabi toolchains.
+Roms are compiled with the armeabi toolchains.
+-->
+
+
+<!--ToolChains-->
+
+<!--Uber 4.8-->
+
+<project name="UBERTC/arm-eabi-4.8" path="UBER/4.8/Kernel" remote="bitbucket" revision="master" />
+
+<project name="UBERTC/arm-linux-androideabi-4.8" path="UBER/4.8/Rom" remote="bitbucket" revision="master" />
+
+<!--Uber 4.9-->
+
+<project name="UBERTC/arm-eabi-4.9" path="UBER/4.9/Kernel" remote="bitbucket" revision="master" />
+
+<project name="UBERTC/arm-linux-androideabi-4.9" path="UBER/4.9/Rom" remote="bitbucket" revision="master" />
+
+<!--Uber 5.1-->
+
+<project name="UBERTC/arm-eabi-5.1" path="UBER/5.1/Kernel" remote="bitbucket" revision="master" />
+
+<project name="UBERTC/arm-linux-androideabi-5.1" path="UBER/5.1/Rom" remote="bitbucket" revision="master" />
+
+<!--Uber 5.2-->
+
+<project name="UBERTC/arm-eabi-5.2" path="UBER/5.2/Kernel" remote="bitbucket" revision="master" />
+
+<project name="UBERTC/arm-linux-androideabi-5.2" path="UBER/5.2/Rom" remote="bitbucket" revision="master" />
+
+
+<!--Uber 6.0-->
+
+<project name="UBERTC/arm-eabi-6.0" path="UBER/6.0/Kernel" remote="bitbucket" revision="master" />
+
+
+<!--Hyper-Toolchains-->
+
+<!--Rom Only-->
+
+<!--SaberNaro 4.8-->
+
+<project name="hyper-toolchains/SaberNaro-androideabi-4.8" path="SaberNaro/4.8/Rom" remote="github" revision="master" />
+
+<!--LinaroMod 4.8-->
+
+<project name="hyper-toolchains/LinaroMod-androideabi-4.8" path="LinaroMod/4.8/Rom" remote="github" revision="master" />
+
+<!--LinaroMod 4.9-->
+
+<project name="hyper-toolchains/LinaroMod-androideabi-4.9" path="LinaroMod/4.9/Rom" remote="github" revision="master" />
+
+<!--Kernel Only-->
+
+<!--LinaroMod 4.9-->
+
+<project name="hyper-toolchains/LinaroMod-arm-eabi-4.9" path="LinaroMod/4.9/Kernel" remote="github" revision="master" />
+
+<!--SaberNaro 4.9-->
+
+<project name="hyper-toolchains/SaberNaro-arm-eabi-4.9" path="SaberNaro/4.9/Kernel" remote="github" revision="master" />
+
+<!--Archidroid-->
+
+<!--Sabermod 4.8-->
+
+<project name="ArchiDroid/Toolchain" path="Sabermod/4.8/Rom" remote="github" revision="sabermod-4.8-arm-linux-androideabi" />
+
+<!--Sabermod 4.9-->
+
+<project name="ArchiDroid/Toolchain" path="Sabermod/4.9/Rom" remote="github" revision="sabermod-4.9-arm-linux-androideabi" />
+
+<!--Linaro All-->
+
+<project name="ArchiDroid/Toolchain" path="Linaro/4.8" remote="github" revision="linaro-4.8" />
+<project name="ArchiDroid/Toolchain" path="Linaro/4.9" remote="github" revision="linaro-4.9" />
+<project name="ArchiDroid/Toolchain" path="Linaro/5.1" remote="github" revision="linaro-5.1" />
+<project name="ArchiDroid/Toolchain" path="Linaro/5.2" remote="github" revision="linaro-5.2" />
+
+<!--ArchiToolchain-->
+
+<project name="ArchiDroid/Toolchain" path="ArchiToolchain/5.2/Kernel" remote="github" revision="architoolchain-5.2-arm-linux-gnueabihf" />
 
 </manifest>
